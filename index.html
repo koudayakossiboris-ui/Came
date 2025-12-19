@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Téléchargement Fichiers CATIA - Projet Technique</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a2980, #26d0ce);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .intro {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            border-left: 5px solid #26d0ce;
+        }
+        
+        .files-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .file-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .file-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .file-header {
+            padding: 1.2rem;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .file-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .catpart {
+            color: #1a73e8;
+        }
+        
+        .catproduct {
+            color: #34a853;
+        }
+        
+        .pdf {
+            color: #ea4335;
+        }
+        
+        .excel {
+            color: #0b8043;
+        }
+        
+        .txt {
+            color: #fbbc05;
+        }
+        
+        .py {
+            color: #4285f4;
+        }
+        
+        .file-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .file-type {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .file-details {
+            padding: 1.2rem;
+        }
+        
+        .file-size {
+            display: inline-block;
+            background-color: #e8f0fe;
+            color: #1a73e8;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #1a73e8;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background-color: #0d62d9;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+        
+        .author-info {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .files-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Téléchargement de Fichiers CATIA</h1>
+        <p class="subtitle">Projet technique - Conception et modélisation</p>
+    </header>
+    
+    <div class="container">
+        <div class="intro">
+            <h2>À propos de ces fichiers</h2>
+            <p>Ce site permet de télécharger les fichiers nécessaires pour le projet technique de modélisation CATIA. Les fichiers incluent des pièces, des assemblages, des scripts et de la documentation technique. Tous les fichiers sont fournis uniquement dans le cadre d'un projet éducatif et technique.</p>
+        </div>
+        
+        <div class="files-grid">
+            <!-- came0.CATPart -->
+            <div class="file-card">
+                <div class="file-header">
+                    <div class="file-icon catpart">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="file-name">came0.CATPart</div>
+                    <div class="file-type">Fichier CATIA Part</div>
+                </div>
+                <div class="file-details">
+                    <span class="file-size">~ 2.4 MB</span>
+                    <p>Modèle 3D de la came principale du système.</p>
+                    <a href="#" class="download-btn" onclick="downloadFile('came0.CATPart')">
+                        <i class="fas fa-download"></i> Télécharger
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Product1.CATProduct -->
+            <div class="file-card">
+                <div class="file-header">
+                    <div class="file-icon catproduct">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <div class="file-name">Product1.CATProduct</div>
+                    <div class="file-type">Fichier CATIA Product</div>
+                </div>
+                <div class="file-details">
+                    <span class="file-size">~ 3.1 MB</span>
+                    <p>Assemblage complet du système mécanique.</p>
+                    <a href="#" class="download-btn" onclick="downloadFile('Product1.CATProduct')">
+                        <i class="fas fa-download"></i> Télécharger
+                    </a>
+                </div>
+            </div>
+            
+            <!-- galet.CATPart -->
+            <div class="file-card">
+                <div class="file-header">
+                    <div class="file-icon catpart">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="file-name">galet.CATPart</div>
+                    <div class="file-type">Fichier CATIA Part</div>
+                </div>
+                <div class="file-details">
+                    <span class="file-size">~ 1.8 MB</span>
+                    <p>Modèle du galet suiveur de la came.</p>
+                    <a href="#" class="download-btn" onclick="downloadFile('galet.CATPart')">
+                        <i class="fas fa-download"></i> Télécharger
+                    </a>
+                </div>
+            </div>
+            
+            <!-- S0.CATPart -->
+            <div class="file-card">
+                <div class="file-header">
+                    <div class="file-icon catpart">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="file-name">S0.CATPart</div>
+                    <div class="file-type">Fichier CATIA Part</div>
+                </div>
+                <div class="file-details">
+                    <span class="file-size">~ 1.5 MB</span>
+                    <p>Pièce de base du système mécanique.</p>
+                    <a href="#" class="download-btn" onclick="downloadFile('S0.CATPart')">
+                        <i class="fas fa-download"></i> Télécharger
+                    </a>
+                </div>
+            </div>
+            
+            <!-- GSD_PointSplineLoftFromExcel.xls -->
+            <div class="file-card">
+                <div class="file-header">
+                    <div class="file-icon excel">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <div class="file-name">GSD_PointSplineLoftFromExcel.xls</div>
+                    <div class="file-type">Fichier Excel</div>
+                </div>
+                <div class="file-details">
+                    <span class="file-size">~ 0.8 MB</span>
+                    <p>Données pour la génération de splines dans CATIA GSD.</p>
+                    <a href="#" class="download-btn" onclick="downloadFile('GSD_PointSplineLoftFromExcel.xls')">
+                        <i class="fas fa-download"></i> Télécharger
+                    </a>
+                </div>
+            </div>
+            
+            <!-- subdivision_parabolic.txt -->
+            <div class="file-card">
+                <div class="file-header">
+                    <div class="file-icon txt">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="file-name">subdivision_parabolic.txt</div>
+                    <div class="file-type">Fichier Texte</div>
+                </div>
+                <div class="file-details">
+                    <span class="file-size">~ 0.2 MB</span>
+                    <p>Paramètres de subdivision pour les courbes paraboliques.</p>
+                    <a href="#" class="download-btn" onclick="downloadFile('subdivision_parabolic.txt')">
+                        <i class="fas fa-download"></i> Télécharger
+                    </a>
+                </div>
+            </div>
+            
+            <!-- loi_parabo.CATPart -->
+            <div class="file-card">
+                <div class="file-header">
+                    <div class="file-icon catpart">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="file-name">loi_parabo.CATPart</div>
+                    <div class="file-type">Fichier CATIA Part</div>
+                </div>
+                <div class="file-details">
+                    <span class="file-size">~ 1.2 MB</span>
+                    <p>Loi de mouvement parabolique pour la came.</p>
+                    <a href="#" class="download-btn" onclick="downloadFile('loi_parabo.CATPart')">
+                        <i class="fas fa-download"></i> Télécharger
+                    </a>
+                </div>
+            </div>
+            
+            <!-- levee_parabolic(01).py -->
+            <div class="file-card">
+                <div class="file-header">
+                    <div class="file-icon py">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="file-name">levee_parabolic(01).py</div>
+                    <div class="file-type">Script Python</div>
+                </div>
+                <div class="file-details">
+                    <span class="file-size">~ 0.1 MB</span>
+                    <p>Script pour générer la loi de levée parabolique.</p>
+                    <a href="#" class="download-btn" onclick="downloadFile('levee_parabolic(01).py')">
+                        <i class="fas fa-download"></i> Télécharger
+                    </a>
+                </div>
+            </div>
+            
+            <!-- suiveur.CATPart -->
+            <div class="file-card">
+                <div class="file-header">
+                    <div class="file-icon catpart">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="file-name">suiveur.CATPart</div>
+                    <div class="file-type">Fichier CATIA Part</div>
+                </div>
+                <div class="file-details">
+                    <span class="file-size">~ 1.7 MB</span>
+                    <p>Pièce suiveuse dans le système de came.</p>
+                    <a href="#" class="download-btn" onclick="downloadFile('suiveur.CATPart')">
+                        <i class="fas fa-download"></i> Télécharger
+                    </a>
+                </div>
+            </div>
+            
+            <!-- document_technique.pdf -->
+            <div class="file-card">
+                <div class="file-header">
+                    <div class="file-icon pdf">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="file-name">document_technique.pdf</div>
+                    <div class="file-type">Document PDF</div>
+                </div>
+                <div class="file-details">
+                    <span class="file-size">~ 5.3 MB</span>
+                    <p>Documentation technique complète du projet.</p>
+                    <a href="#" class="download-btn" onclick="downloadFile('document_technique.pdf')">
+                        <i class="fas fa-download"></i> Télécharger
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Ce site est conçu uniquement dans le but d'un projet technique éducatif.</p>
+            <p class="copyright">© 2023 Tous droits réservés. Les modèles, conceptions et fichiers présents sur ce site sont la propriété de leurs créateurs respectifs et sont fournis uniquement à des fins éducatives.</p>
+            
+            <div class="author-info">
+                <p><strong>Auteur :</strong> Boris Kossi Koudaya</p>
+                <p><strong>Qualification :</strong> Ingénieur aéronautique et automobile en formation</p>
+                <p><strong>But :</strong> Projet technique de modélisation et conception CATIA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simulation de téléchargement
+        function downloadFile(filename) {
+            alert(`Téléchargement simulé : ${filename}\n\nDans une application réelle, le fichier serait téléchargé depuis le serveur.`);
+            
+            // Dans une application réelle, vous auriez un lien vers le fichier réel
+            // window.location.href = `path/to/files/${filename}`;
+            
+            // Enregistrer l'action de téléchargement (simulée)
+            console.log(`Téléchargement initié pour : ${filename}`);
+        }
+        
+        // Animation d'entrée pour les cartes
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.file-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 + index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
