@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Téléchargement Fichiers CATIA - Projet Technique</title>
     <style>
+        /* Styles inchangés... */
         * {
             margin: 0;
             padding: 0;
@@ -157,6 +158,27 @@
             cursor: not-allowed;
         }
         
+        .download-all-btn {
+            display: block;
+            width: 250px;
+            margin: 2rem auto;
+            padding: 1rem 2rem;
+            background-color: #34a853;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .download-all-btn:hover {
+            background-color: #2d9249;
+        }
+        
         .download-progress {
             display: none;
             width: 100%;
@@ -241,7 +263,7 @@
         <div class="intro">
             <h2>À propos de ces fichiers</h2>
             <p>Ce site permet de télécharger les fichiers nécessaires pour le projet technique de modélisation CATIA. Les fichiers incluent des pièces, des assemblages, des scripts et de la documentation technique. Tous les fichiers sont fournis uniquement dans le cadre d'un projet éducatif et technique.</p>
-            <p style="margin-top: 10px; font-style: italic; color: #666;">Note: Les fichiers de démonstration sont générés automatiquement. Pour utiliser vos propres fichiers, remplacez-les dans le dossier de vos serveurs.</p>
+            <p style="margin-top: 10px; font-style: italic; color: #666;">Les fichiers sont stockés sur le serveur et seront téléchargés depuis le dossier "files".</p>
         </div>
         
         <div class="files-grid">
@@ -257,12 +279,9 @@
                 <div class="file-details">
                     <span class="file-size">~ 2.4 MB</span>
                     <p>Modèle 3D de la came principale du système.</p>
-                    <button class="download-btn" onclick="downloadFile('came0', 'CATPart')">
+                    <a href="files/came0.CATPart" class="download-btn" download onclick="trackDownload('came0.CATPart')">
                         <i class="fas fa-download"></i> Télécharger
-                    </button>
-                    <div class="download-progress" id="progress-came0">
-                        <div class="download-progress-bar" id="progress-bar-came0"></div>
-                    </div>
+                    </a>
                 </div>
             </div>
             
@@ -278,12 +297,9 @@
                 <div class="file-details">
                     <span class="file-size">~ 3.1 MB</span>
                     <p>Assemblage complet du système mécanique.</p>
-                    <button class="download-btn" onclick="downloadFile('Product1', 'CATProduct')">
+                    <a href="files/Product1.CATProduct" class="download-btn" download onclick="trackDownload('Product1.CATProduct')">
                         <i class="fas fa-download"></i> Télécharger
-                    </button>
-                    <div class="download-progress" id="progress-Product1">
-                        <div class="download-progress-bar" id="progress-bar-Product1"></div>
-                    </div>
+                    </a>
                 </div>
             </div>
             
@@ -299,12 +315,9 @@
                 <div class="file-details">
                     <span class="file-size">~ 1.8 MB</span>
                     <p>Modèle du galet suiveur de la came.</p>
-                    <button class="download-btn" onclick="downloadFile('galet', 'CATPart')">
+                    <a href="files/galet.CATPart" class="download-btn" download onclick="trackDownload('galet.CATPart')">
                         <i class="fas fa-download"></i> Télécharger
-                    </button>
-                    <div class="download-progress" id="progress-galet">
-                        <div class="download-progress-bar" id="progress-bar-galet"></div>
-                    </div>
+                    </a>
                 </div>
             </div>
             
@@ -320,12 +333,9 @@
                 <div class="file-details">
                     <span class="file-size">~ 1.5 MB</span>
                     <p>Pièce de base du système mécanique.</p>
-                    <button class="download-btn" onclick="downloadFile('S0', 'CATPart')">
+                    <a href="files/S0.CATPart" class="download-btn" download onclick="trackDownload('S0.CATPart')">
                         <i class="fas fa-download"></i> Télécharger
-                    </button>
-                    <div class="download-progress" id="progress-S0">
-                        <div class="download-progress-bar" id="progress-bar-S0"></div>
-                    </div>
+                    </a>
                 </div>
             </div>
             
@@ -341,12 +351,9 @@
                 <div class="file-details">
                     <span class="file-size">~ 0.8 MB</span>
                     <p>Données pour la génération de splines dans CATIA GSD.</p>
-                    <button class="download-btn" onclick="downloadFile('GSD_PointSplineLoftFromExcel', 'xls')">
+                    <a href="files/GSD_PointSplineLoftFromExcel.xls" class="download-btn" download onclick="trackDownload('GSD_PointSplineLoftFromExcel.xls')">
                         <i class="fas fa-download"></i> Télécharger
-                    </button>
-                    <div class="download-progress" id="progress-GSD_PointSplineLoftFromExcel">
-                        <div class="download-progress-bar" id="progress-bar-GSD_PointSplineLoftFromExcel"></div>
-                    </div>
+                    </a>
                 </div>
             </div>
             
@@ -362,12 +369,9 @@
                 <div class="file-details">
                     <span class="file-size">~ 0.2 MB</span>
                     <p>Paramètres de subdivision pour les courbes paraboliques.</p>
-                    <button class="download-btn" onclick="downloadFile('subdivision_parabolic', 'txt')">
+                    <a href="files/subdivision_parabolic.txt" class="download-btn" download onclick="trackDownload('subdivision_parabolic.txt')">
                         <i class="fas fa-download"></i> Télécharger
-                    </button>
-                    <div class="download-progress" id="progress-subdivision_parabolic">
-                        <div class="download-progress-bar" id="progress-bar-subdivision_parabolic"></div>
-                    </div>
+                    </a>
                 </div>
             </div>
             
@@ -383,12 +387,9 @@
                 <div class="file-details">
                     <span class="file-size">~ 1.2 MB</span>
                     <p>Loi de mouvement parabolique pour la came.</p>
-                    <button class="download-btn" onclick="downloadFile('loi_parabo', 'CATPart')">
+                    <a href="files/loi_parabo.CATPart" class="download-btn" download onclick="trackDownload('loi_parabo.CATPart')">
                         <i class="fas fa-download"></i> Télécharger
-                    </button>
-                    <div class="download-progress" id="progress-loi_parabo">
-                        <div class="download-progress-bar" id="progress-bar-loi_parabo"></div>
-                    </div>
+                    </a>
                 </div>
             </div>
             
@@ -404,12 +405,9 @@
                 <div class="file-details">
                     <span class="file-size">~ 0.1 MB</span>
                     <p>Script pour générer la loi de levée parabolique.</p>
-                    <button class="download-btn" onclick="downloadFile('levee_parabolic(01)', 'py')">
+                    <a href="files/levee_parabolic(01).py" class="download-btn" download onclick="trackDownload('levee_parabolic(01).py')">
                         <i class="fas fa-download"></i> Télécharger
-                    </button>
-                    <div class="download-progress" id="progress-levee_parabolic(01)">
-                        <div class="download-progress-bar" id="progress-bar-levee_parabolic(01)"></div>
-                    </div>
+                    </a>
                 </div>
             </div>
             
@@ -425,12 +423,9 @@
                 <div class="file-details">
                     <span class="file-size">~ 1.7 MB</span>
                     <p>Pièce suiveuse dans le système de came.</p>
-                    <button class="download-btn" onclick="downloadFile('suiveur', 'CATPart')">
+                    <a href="files/suiveur.CATPart" class="download-btn" download onclick="trackDownload('suiveur.CATPart')">
                         <i class="fas fa-download"></i> Télécharger
-                    </button>
-                    <div class="download-progress" id="progress-suiveur">
-                        <div class="download-progress-bar" id="progress-bar-suiveur"></div>
-                    </div>
+                    </a>
                 </div>
             </div>
             
@@ -446,15 +441,16 @@
                 <div class="file-details">
                     <span class="file-size">~ 5.3 MB</span>
                     <p>Documentation technique complète du projet.</p>
-                    <button class="download-btn" onclick="downloadFile('document_technique', 'pdf')">
+                    <a href="files/document_technique.pdf" class="download-btn" download onclick="trackDownload('document_technique.pdf')">
                         <i class="fas fa-download"></i> Télécharger
-                    </button>
-                    <div class="download-progress" id="progress-document_technique">
-                        <div class="download-progress-bar" id="progress-bar-document_technique"></div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
+        
+        <button class="download-all-btn" onclick="downloadAllFiles()">
+            <i class="fas fa-download"></i> Télécharger tous les fichiers (ZIP)
+        </button>
     </div>
     
     <footer>
@@ -471,225 +467,15 @@
     </footer>
 
     <script>
-        // Fichiers de démonstration avec contenu simulé
-        const fileContents = {
-            'came0.CATPart': `CATIA V5 Part File
-Product1
-$$ CATPart 1.0
-$$ Dimensions in MM
-$$ Part: came0
-$$ Created by: Boris Kossi Koudaya
-$$ Date: ${new Date().toLocaleDateString()}
-$$ Project: Système de came technique
-$$ Description: Modèle 3D de la came principale
-$$ Material: Acier
-$$ Weight: 0.45 kg
-$$ Volume: 57432.15 mm³
-$$ Surface: 24567.89 mm²
-$$ Center of Gravity: X=25.4, Y=12.7, Z=8.9
-$$ Inertia Matrix: Ixx=..., Iyy=..., Izz=...
-END CATPart`,
+        // Fonction pour suivre les téléchargements
+        function trackDownload(filename) {
+            console.log(`Téléchargement de ${filename} démarré`);
             
-            'Product1.CATProduct': `CATIA V5 Product File
-Product1
-$$ CATProduct 1.0
-$$ Assembly: Product1
-$$ Created by: Boris Kossi Koudaya
-$$ Date: ${new Date().toLocaleDateString()}
-$$ Project: Système mécanique complet
-$$ Description: Assemblage du système de came
-$$ Components:
-$$   - came0.CATPart
-$$   - galet.CATPart
-$$   - S0.CATPart
-$$   - suiveur.CATPart
-$$ Constraints:
-$$   - Coincidence: 4
-$$   - Contact: 2
-$$   - Angle: 1
-$$   - Fix: 1
-$$ Degrees of Freedom: 1
-$$ Mechanism: Cam-Follower System
-END CATProduct`,
+            // Afficher la notification
+            showNotification(`Téléchargement de ${filename} démarré`);
             
-            'galet.CATPart': `CATIA V5 Part File
-Product1
-$$ CATPart 1.0
-$$ Part: galet
-$$ Created by: Boris Kossi Koudaya
-$$ Date: ${new Date().toLocaleDateString()}
-$$ Description: Galet suiveur de came
-$$ Diameter: 20 mm
-$$ Width: 10 mm
-$$ Material: Acier trempé
-$$ Hardness: 60 HRC
-$$ Surface finish: Ra 0.8
-END CATPart`,
-            
-            'S0.CATPart': `CATIA V5 Part File
-Product1
-$$ CATPart 1.0
-$$ Part: S0
-$$ Created by: Boris Kossi Koudaya
-$$ Base part for mechanical system
-$$ Function: Support structure
-$$ Material: Aluminum 6061
-$$ Manufacturing: CNC Milling
-$$ Tolerances: ISO 2768-m
-END CATPart`,
-            
-            'GSD_PointSplineLoftFromExcel.xls': `Microsoft Excel Worksheet
-Points Data for CATIA GSD
-X,Y,Z
-0,0,0
-10,5,2
-20,8,4
-30,10,5
-40,9,6
-50,7,7
-60,5,6
-70,3,4
-80,2,2
-90,1,0
-END DATA`,
-            
-            'subdivision_parabolic.txt': `Subdivision Parameters for Parabolic Curves
-Algorithm: Parabolic Subdivision
-Iterations: 5
-Tolerance: 0.001 mm
-Control Points: 8
-Degree: 2
-Continuity: C2
-Smoothing: Enabled
-Max Deviation: 0.1 mm
-END PARAMETERS`,
-            
-            'loi_parabo.CATPart': `CATIA V5 Part File
-Product1
-$$ CATPart 1.0
-$$ Part: loi_parabo
-$$ Parabolic motion law for cam
-$$ Equation: y = ax² + bx + c
-$$ Coefficients: a=0.02, b=0, c=0
-$$ Range: 0-180 degrees
-$$ Max Lift: 20 mm
-$$ Velocity: Continuous
-$$ Acceleration: Parabolic
-$$ Jerk: Finite
-END CATPart`,
-            
-            'levee_parabolic(01).py': `#!/usr/bin/env python3
-# Script for generating parabolic lift law
-# Author: Boris Kossi Koudaya
-# Date: ${new Date().toLocaleDateString()}
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-def parabolic_lift(theta, a=0.02, b=0, c=0):
-    """Calculate parabolic lift for given angle"""
-    return a * theta**2 + b * theta + c
-
-# Generate data points
-angles = np.linspace(0, 180, 100)
-lifts = parabolic_lift(angles)
-
-# Save to file
-with open('parabolic_lift.csv', 'w') as f:
-    f.write('Angle (deg), Lift (mm)\\n')
-    for angle, lift in zip(angles, lifts):
-        f.write(f'{angle:.2f}, {lift:.3f}\\n')
-
-print("Parabolic lift data generated successfully!")`,
-            
-            'suiveur.CATPart': `CATIA V5 Part File
-Product1
-$$ CATPart 1.0
-$$ Part: suiveur
-$$ Follower component for cam system
-$$ Type: Flat-faced follower
-$$ Spring: Compression 50N
-$$ Guide: Linear bearing
-$$ Lubrication: Required
-$$ Maintenance: Every 1000 hours
-END CATPart`,
-            
-            'document_technique.pdf': `PDF Document - Technical Documentation
-PROJECT: CAM-FOLLOWER SYSTEM
-AUTHOR: Boris Kossi Koudaya
-DATE: ${new Date().toLocaleDateString()}
-
-TABLE OF CONTENTS
-1. Introduction
-2. Design Specifications
-3. Component Descriptions
-4. Assembly Instructions
-5. Performance Analysis
-6. Maintenance Guidelines
-7. Appendix
-
-SUMMARY:
-This document provides complete technical documentation
-for the cam-follower system designed as part of the
-engineering project. All components are described in
-detail with specifications, tolerances, and assembly
-procedures.
-
-© All rights reserved. For educational purposes only.`
-        };
-
-        // Fonction pour télécharger un fichier
-        function downloadFile(filename, extension) {
-            const fullFilename = `${filename}.${extension}`;
-            const button = event.target.closest('.download-btn');
-            const progressBar = document.getElementById(`progress-bar-${filename}`);
-            const progressContainer = document.getElementById(`progress-${filename}`);
-            
-            // Désactiver le bouton pendant le téléchargement
-            button.disabled = true;
-            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Téléchargement...';
-            
-            // Afficher la barre de progression
-            progressContainer.style.display = 'block';
-            
-            // Simuler une progression
-            let progress = 0;
-            const progressInterval = setInterval(() => {
-                progress += Math.random() * 15;
-                if (progress > 100) progress = 100;
-                progressBar.style.width = `${progress}%`;
-                
-                if (progress >= 100) {
-                    clearInterval(progressInterval);
-                    
-                    // Créer le fichier à télécharger
-                    const content = fileContents[fullFilename] || `Fichier ${fullFilename}\nGénéré le ${new Date().toLocaleString()}\nAuteur: Boris Kossi Koudaya\nProjet: Système de came technique`;
-                    const blob = new Blob([content], { type: 'application/octet-stream' });
-                    const url = window.URL.createObjectURL(blob);
-                    
-                    // Créer un lien de téléchargement
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = fullFilename;
-                    document.body.appendChild(a);
-                    a.click();
-                    
-                    // Nettoyer
-                    window.URL.revokeObjectURL(url);
-                    document.body.removeChild(a);
-                    
-                    // Réactiver le bouton
-                    setTimeout(() => {
-                        button.disabled = false;
-                        button.innerHTML = '<i class="fas fa-download"></i> Télécharger';
-                        progressContainer.style.display = 'none';
-                        progressBar.style.width = '0%';
-                        
-                        // Afficher la notification
-                        showNotification(`${fullFilename} téléchargé avec succès!`);
-                    }, 500);
-                }
-            }, 100);
+            // Vous pouvez ajouter ici du tracking Google Analytics ou autre
+            // Exemple: ga('send', 'event', 'Download', 'click', filename);
         }
 
         // Fonction pour afficher une notification
@@ -705,6 +491,50 @@ procedures.
             }, 3000);
         }
 
+        // Fonction pour télécharger tous les fichiers
+        function downloadAllFiles() {
+            // Cette fonction nécessite un backend pour créer un ZIP
+            // Voici deux options :
+            
+            // Option 1: Lien vers un ZIP pré-créé (recommandé)
+            // window.location.href = 'files/projet_catia_complet.zip';
+            
+            // Option 2: Message d'information
+            showNotification("Pour télécharger tous les fichiers, veuillez créer un ZIP manuellement ou utiliser un script serveur.");
+            
+            // Option 3: Télécharger individuellement (moins pratique)
+            // downloadMultipleFiles();
+        }
+
+        // Fonction alternative pour télécharger plusieurs fichiers
+        function downloadMultipleFiles() {
+            const files = [
+                'files/came0.CATPart',
+                'files/Product1.CATProduct',
+                'files/galet.CATPart',
+                'files/S0.CATPart',
+                'files/GSD_PointSplineLoftFromExcel.xls',
+                'files/subdivision_parabolic.txt',
+                'files/loi_parabo.CATPart',
+                'files/levee_parabolic(01).py',
+                'files/suiveur.CATPart',
+                'files/document_technique.pdf'
+            ];
+            
+            showNotification("Téléchargement des fichiers un par un...");
+            
+            files.forEach((file, index) => {
+                setTimeout(() => {
+                    const link = document.createElement('a');
+                    link.href = file;
+                    link.download = file.split('/').pop();
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }, index * 1000);
+            });
+        }
+
         // Animation d'entrée pour les cartes
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.file-card');
@@ -718,58 +548,7 @@ procedures.
                     card.style.transform = 'translateY(0)';
                 }, 100 + index * 100);
             });
-            
-            // Ajouter un gestionnaire pour tous les boutons de téléchargement
-            const downloadButtons = document.querySelectorAll('.download-btn');
-            downloadButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    // Empêcher le comportement par défaut
-                    e.preventDefault();
-                });
-            });
         });
-        
-        // Fonction pour télécharger tous les fichiers (optionnel)
-        function downloadAllFiles() {
-            const files = [
-                'came0.CATPart',
-                'Product1.CATProduct',
-                'galet.CATPart',
-                'S0.CATPart',
-                'GSD_PointSplineLoftFromExcel.xls',
-                'subdivision_parabolic.txt',
-                'loi_parabo.CATPart',
-                'levee_parabolic(01).py',
-                'suiveur.CATPart',
-                'document_technique.pdf'
-            ];
-            
-            showNotification('Téléchargement de tous les fichiers démarré...');
-            
-            // Télécharger chaque fichier avec un délai
-            files.forEach((file, index) => {
-                const [name, ext] = file.split('.');
-                setTimeout(() => {
-                    // Simuler le téléchargement
-                    const content = fileContents[file] || `Fichier ${file}\nGénéré le ${new Date().toLocaleString()}`;
-                    const blob = new Blob([content], { type: 'application/octet-stream' });
-                    const url = window.URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = file;
-                    document.body.appendChild(a);
-                    a.click();
-                    window.URL.revokeObjectURL(url);
-                    document.body.removeChild(a);
-                    
-                    if (index === files.length - 1) {
-                        showNotification('Tous les fichiers ont été téléchargés!');
-                    }
-                }, index * 500);
-            });
-        }
     </script>
 </body>
-
 </html>
-
